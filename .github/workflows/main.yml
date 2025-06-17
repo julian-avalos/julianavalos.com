@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.DROPLET_SSH_KEY }}
           source: "."
-          target: "/var/www/html/julianavalos.com"
+          target: "/var/www/julianavalos.com/html"
 
       - name: Restart Nginx (optional, if needed)
         uses: appleboy/ssh-action@v1.0.3
