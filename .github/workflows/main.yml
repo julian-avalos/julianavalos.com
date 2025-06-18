@@ -17,8 +17,8 @@ jobs:
           output_dir: '/posts'
       - uses: actions/upload-artifact@v4
         with:
-          name: posts
-          path: /posts/*
+          name: '*.html'
+          path: '/posts/*.html'
   deploy:
     runs-on: ubuntu-latest
 
