@@ -30,7 +30,8 @@ jobs:
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.DROPLET_SSH_KEY }}
           script: |
-            rm -rf /var/www/julianavalos.com/html/*          source: "."
+            rm -rf /var/www/julianavalos.com/html/*          
+          source: "."
           target: "/var/www/julianavalos.com/html"
           exclude: |
             .github
