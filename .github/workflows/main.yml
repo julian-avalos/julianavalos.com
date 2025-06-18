@@ -21,6 +21,8 @@ jobs:
             filename=$(basename "$file" .md)
             pandoc "$file" -o "posts/$filename.html"
           done
+      - name: Generate index.json
+        run: npm install && npm run generate-index
       - name: Copy files to Droplet via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
