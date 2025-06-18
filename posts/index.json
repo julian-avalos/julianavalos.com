@@ -1,7 +1,12 @@
 [
   {
-    "title": "Hello World",
-    "date": "2025-25-18",
-    "file": "hello-world"
+    "title": "My First Post",
+    "date": "2025-06-18",
+    "file": "my-first-post"
+  },
+  {
+    "title": "My Second Post",
+    "date": "2025-06-18",
+    "file": "my-second-post"
   }
 ]
