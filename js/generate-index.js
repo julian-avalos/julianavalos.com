@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const postsDir = path.join(__dirname, 'posts');
+const postsDir = path.join(__dirname, '../posts');
 const indexFile = path.join(postsDir, 'index.json');
 
 function extractFrontmatter(content) {

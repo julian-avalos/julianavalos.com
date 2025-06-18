@@ -4,7 +4,7 @@
   "description": "A personal portfolio website with blog and contact form using vanilla HTML, CSS, and JS.",
   "main": "generate-index.js",
   "scripts": {
-    "generate-index": "node generate-index.js"
+    "generate-index": "node js/generate-index.js"
   },
   "author": "Your Name",
   "license": "MIT"
