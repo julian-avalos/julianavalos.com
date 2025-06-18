@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: baileyjm02/markdown-to-html@v1
+      - uses: BaileyJM02/markdown-to-pdf@v1.2.0
         with:
           input: '/posts/**.md'
           output: '/posts/**.html'
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: posts
           path: /posts
