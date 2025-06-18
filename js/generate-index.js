@@ -17,7 +17,7 @@ function extractFrontmatter(content) {
 }
 
 const posts = fs.readdirSync(postsDir)
-  .filter(f => f.endsWith('.html'))
+  .filter(f => f.endsWith('.md'))
   .map(filename => {
     const content = fs.readFileSync(path.join(postsDir, filename), 'utf8');
     const frontmatter = extractFrontmatter(content);

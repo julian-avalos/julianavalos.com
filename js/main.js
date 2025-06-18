@@ -6,7 +6,7 @@ if (document.getElementById('blog-list')) {
       const list = document.getElementById('blog-list');
       posts.forEach(post => {
         const div = document.createElement('div');
-        div.innerHTML = `<h2>${post.title}</h2><p>${post.date}</p><a href="/posts/${post.file}">Read more</a>`;
+        div.innerHTML = `<h2>${post.title}</h2><p>${post.date}</p><a href="/posts/${post.file}.html">Read more</a>`;
         list.appendChild(div);
       });
     });
