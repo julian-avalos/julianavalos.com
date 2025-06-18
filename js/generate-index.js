@@ -24,7 +24,7 @@ const posts = fs.readdirSync(postsDir)
     return {
       title: frontmatter.title || filename,
       date: frontmatter.date || '',
-      file: filename
+      file: frontmatter.path
     };
   });
 
