@@ -23,14 +23,14 @@ jobs:
           done
       - name: Generate index.json
         run: npm install && npm run generate-index
+      - name: Clear server files
+        run: rm -rf /var/www/julianavalos.com/html/*
       - name: Copy files to Droplet via SSH
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.DROPLET_HOST }}
           username: ${{ secrets.DROPLET_USER }}
-          key: ${{ secrets.DROPLET_SSH_KEY }}
-          script: |
-            rm -rf /var/www/julianavalos.com/html/*          
+          key: ${{ secrets.DROPLET_SSH_KEY }}        
           source: "."
           target: "/var/www/julianavalos.com/html"
           exclude: |
