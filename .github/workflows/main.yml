@@ -13,8 +13,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: BaileyJM02/markdown-to-pdf@v1.2.0
         with:
-          input: '/posts/**.md'
-          output: '/posts/**.html'
+          input_dir: '/posts/**.md'
+          output_dir: '/posts/**.html'
       - uses: actions/upload-artifact@v4
         with:
           name: posts
