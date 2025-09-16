@@ -1,0 +1,140 @@
+:root {
+  --white: #f2f2f2;
+  --background-light: #f2f2f2;
+  --background-dark: #210b4b;
+  --background-dark-alt: #3f1c6d;
+  --font-light: #f2f2f2;
+  --font-dark: #333;
+  color-scheme: dark;
+  line-height: 1.5;
+
+  :has(input:checked) {
+    color-scheme: light;
+    color: var(--font-dark);
+  }
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+hr {
+  margin: 2rem auto;
+  width: 3rem;
+}
+h1, h3 {
+  margin: 0;
+  margin: 0 0 .5rem 0;;
+}
+h1 {
+  font-size: 4rem;
+}
+p {
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+section {
+  padding: 1.5rem 3rem;
+}
+section:nth-child(even) {
+  background-color: light-dark(var(--background-light), var(--background-dark-alt));
+}
+section:nth-child(odd) {
+  background-color: light-dark(var(--background-light), var(--background-dark));
+}
+div:where([class*="__content"]) {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    width: 500px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    object-position: 0 -2rem;
+  }
+}
+.education__content-item {
+  margin-bottom: 1rem;
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.card {
+  border: 3px solid light-dark(var(--background-dark-alt), var(--background-light));
+  border-radius: 1rem;
+  padding: 1.5rem;
+
+  .card__title {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+}
+
+/* Theme Switcher */
+.toggle-switch {
+  position: relative;
+  width: 50px;   /* half width */
+  height: 25px;  /* half height */
+}
+
+label {
+  position: absolute;
+  width: 100%;
+  height: 25px; /* half height */
+  background-color: var(--background-light);
+  border-radius: 12.5px; /* half of height */
+  cursor: pointer;
+}
+
+input {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12.5px;
+  transition: 0.3s;
+}
+
+input:checked ~ .slider {
+  background-color: var(--background-dark);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;   /* adjust to center knob */
+  left: 4px;  /* adjust to center knob */
+  width: 18px; /* half knob size */
+  height: 18px;
+  border-radius: 50%;
+  box-shadow: inset 6px -1px 0px 0px var(--background-dark);
+  background-color: var(--background-light);
+  transition: 0.3s;
+}
+
+input:checked ~ .slider::before {
+  transform: translateX(25px); /* half movement */
+  background-color: var(--background-light);
+  box-shadow: none;
+}
