@@ -2,10 +2,6 @@
   "name": "portfolio-site",
   "version": "1.0.0",
   "description": "A personal portfolio website with blog and contact form using vanilla HTML, CSS, and JS.",
-  "main": "generate-index.js",
-  "scripts": {
-    "generate-index": "node /assets/js/generate-index.js"
-  },
   "author": "Your Name",
   "license": "MIT"
 }
