@@ -18,6 +18,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 hr {
   margin: 2rem auto;
@@ -37,7 +38,11 @@ p {
   }
 }
 section {
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 1rem;
+
+  & .section__content {
+    max-width: 100%;
+  }
 }
 section:nth-child(even) {
   background-color: light-dark(var(--background-light), var(--background-dark-alt));
@@ -45,10 +50,7 @@ section:nth-child(even) {
 section:nth-child(odd) {
   background-color: light-dark(var(--background-light), var(--background-dark));
 }
-div:where([class*="__content"]) {
-  max-width: 500px;
-  margin: 0 auto;
-}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -62,10 +64,13 @@ div:where([class*="__content"]) {
   img {
     border-radius: 100%;
     aspect-ratio: 1 / 1;
-    width: 500px;
+    max-width: 500px;
     margin-bottom: 1rem;
     object-fit: cover;
     object-position: 0 -2rem;
+  }
+  h1 {
+    text-align: center;
   }
 }
 .education__content-item {
@@ -138,3 +143,19 @@ input:checked ~ .slider::before {
   background-color: var(--background-light);
   box-shadow: none;
 }
+
+@media screen and (min-width: 600px) {
+  section {
+    padding: 1.5rem 3rem;
+
+    & .section__content {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+  /* [class*="__content"] {
+    max-width: 500px;
+    margin: 0 auto;
+  } */
+}
+
